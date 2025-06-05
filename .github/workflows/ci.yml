@@ -6,8 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
+
+    - name: install Django 
+      run: pip3 install --user django
+      working-directory: airline 
+
+
+
+      
     - name: Run Django unit tests
       run: |
-        pip3 install --user django
         python3 manage.py test
-        working-directory: airline
+      working-directory: airline
